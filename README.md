@@ -1,12 +1,20 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+Roopantor Art Festival
 
-# Run and deploy your AI Studio app
+"A Different Voice. A Unique Art."
 
-This contains everything you need to run your app locally.
+Roopantor is a cultural movement and art festival designed to bridge the artistic heritage of Bengal with the wider narrative of India ("Bengal to Bharat").
 
-View your app in AI Studio: https://ai.studio/apps/drive/17ZXEAVWZLumd29s8AfNaAJ5hv9t6gzbK
+This project is a cinematic, immersive React application that serves as the digital face of the festival. It combines a dark, moody aesthetic with fluid animations to tell the story of reinterpreting art for a contemporary audience.
+
+Key Highlights
+
+Mission: To reveal forgotten stories and celebrate underrepresented talent.
+
+Visual Style: High-contrast, cinematic design using Saffron Yellow (#FFD740) and Earthy Green (#A6CF8C).
+
+Tech Stack: React, Tailwind CSS, Framer Motion (for parallax and scroll reveals).
+
+Features: Interactive theatre schedules, film festival pass booking, and a poetic manifesto narrative.
 
 ## Run Locally
 
@@ -15,6 +23,5 @@ View your app in AI Studio: https://ai.studio/apps/drive/17ZXEAVWZLumd29s8AfNaAJ
 
 1. Install dependencies:
    `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
+2. Run the app:
    `npm run dev`
