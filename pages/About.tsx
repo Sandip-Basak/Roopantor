@@ -79,7 +79,7 @@ export const About: React.FC = () => {
               >
                   <div className="relative p-4 border border-roopantor-gold/30">
                       <div className="absolute top-0 left-0 w-full h-full bg-roopantor-gold/10 mix-blend-overlay pointer-events-none" />
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Bharat_Mata_by_Abanindranath_Tagore.jpg/467px-Bharat_Mata_by_Abanindranath_Tagore.jpg" alt="Bharat Mata" className="max-h-[500px] w-auto grayscale contrast-125 hover:grayscale-0 transition-all duration-1000" />
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Bharat_Mata_by_Abanindranath_Tagore.jpg/500px-Bharat_Mata_by_Abanindranath_Tagore.jpg" alt="Bharat Mata" className="max-h-[500px] w-auto grayscale contrast-125 hover:grayscale-0 transition-all duration-1000" />
                   </div>
               </motion.div>
           </div>
