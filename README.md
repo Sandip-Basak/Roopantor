@@ -16,11 +16,6 @@ Tech Stack: React, Tailwind CSS, Framer Motion (for parallax and scroll reveals)
 
 Features: Interactive theatre schedules, film festival pass booking, and a poetic manifesto narrative.
 
-## Run Locally
-
-**Prerequisites:**  Node.js
-
-
 1. Install dependencies:
    `npm install`
 2. Run the app:

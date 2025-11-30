@@ -16,13 +16,13 @@ export const SectionTitle: React.FC<SectionTitleProps> = ({ subtitle, title, ali
 
   return (
     <div className={`flex flex-col gap-2 mb-12 ${alignClass[align]} ${className}`}>
-      <span className="text-roopantor-gold uppercase tracking-[0.3em] text-xs font-sans font-bold">
+      <span className="text-gray-500 uppercase tracking-[0.3em] text-xs font-sans font-bold">
         {subtitle}
       </span>
-      <h2 className="text-4xl md:text-5xl lg:text-6xl font-display text-white">
+      <h2 className="text-4xl md:text-5xl lg:text-6xl font-display text-roopantor-black">
         {title}
       </h2>
-      <div className="w-24 h-1 bg-roopantor-gold mt-4" />
+      <div className="w-24 h-1 bg-roopantor-black mt-4" />
     </div>
   );
 };

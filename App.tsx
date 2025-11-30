@@ -54,7 +54,7 @@ const AppContent: React.FC = () => {
             {loading ? (
                 <LoadingScreen onComplete={() => setLoading(false)} />
             ) : (
-                <div className="flex flex-col min-h-screen bg-roopantor-black text-roopantor-cream bg-noise transition-opacity duration-1000">
+                <div className="flex flex-col min-h-screen bg-white text-roopantor-textDark bg-noise transition-opacity duration-1000">
                     <ScrollToTop />
                     <Navbar />
                     <main className="flex-grow">
