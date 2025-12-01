@@ -32,115 +32,115 @@ const HERO_SLIDES = [
 ];
 
 export const Home: React.FC = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
+    const [currentSlide, setCurrentSlide] = useState(0);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % HERO_SLIDES.length);
-    }, 6000);
-    return () => clearInterval(timer);
-  }, []);
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setCurrentSlide((prev) => (prev + 1) % HERO_SLIDES.length);
+        }, 6000);
+        return () => clearInterval(timer);
+    }, []);
 
-  return (
-    <PageTransition className="w-full">
-      {/* Hero Section */}
-      <header className="relative min-h-screen md:h-[85vh] md:min-h-[600px] flex items-start md:items-center justify-center overflow-hidden bg-roopantor-black">
-        <div className="absolute inset-0 z-0 bg-black aspect-[2664/984]">
-          <AnimatePresence>
-            <motion.div
-                key={currentSlide}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 5 }}
-                className="absolute inset-0 w-full h-full"
-            >
-                {HERO_SLIDES[currentSlide].type === 'image' ? (
-                     <img 
-                        src={HERO_SLIDES[currentSlide].src} 
-                        className="w-full h-full object-cover" 
-                        alt="Hero Slide" 
-                     />
-                ) : (
-                    <div className="w-full h-full relative overflow-hidden">
-                        {/* Scale up iframe to ensure it covers the area without black bars usually found in 16:9 embeds */}
-                        <iframe 
-                            src={HERO_SLIDES[currentSlide].src}
-                            className="absolute top-1/2 left-1/2 w-[300%] h-[300%] -translate-x-1/2 -translate-y-1/2 pointer-events-none"
-                            frameBorder="0"
-                            allow="autoplay; encrypted-media"
-                            title="Background Video"
-                        />
-                    </div>
-                )}
-            </motion.div>
-          </AnimatePresence>
-          
-          {/* Dark Overlay for Light Text */}
-          <div className="absolute inset-0 bg-black/40 z-10" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-90 z-10" />
-        </div>
-        
-        <div className="container relative z-20 px-6 text-left pt-40 md:pt-0 pb-24 md:pb-0">
-          <motion.span 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 1 }}
-            className="inline-block text-white border border-white px-6 py-2 text-xs tracking-[0.4em] uppercase mb-16 font-bold"
-          >
-            Onno Shor, Ononno Shilpo
-          </motion.span>
-          
-          <motion.h1 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8, duration: 1 }}
-            className="font-display text-6xl md:text-8xl lg:text-9xl text-white mb-6 leading-tight"
-          >
-            From Bengal <br />
-            <span className="italic font-serif text-white">To Bharat</span>
-          </motion.h1>
+    return (
+        <PageTransition className="w-full">
+            {/* Hero Section */}
+            <header className="relative min-h-screen md:h-[85vh] md:min-h-[600px] flex items-start md:items-center justify-center overflow-hidden bg-roopantor-black">
+                <div className="absolute inset-0 z-0 bg-black aspect-[2664/984]">
+                    <AnimatePresence>
+                        <motion.div
+                            key={currentSlide}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{ duration: 5 }}
+                            className="absolute inset-0 w-full h-full"
+                        >
+                            {HERO_SLIDES[currentSlide].type === 'image' ? (
+                                <img
+                                    src={HERO_SLIDES[currentSlide].src}
+                                    className="w-full h-full object-cover"
+                                    alt="Hero Slide"
+                                />
+                            ) : (
+                                <div className="w-full h-full relative overflow-hidden">
+                                    {/* Scale up iframe to ensure it covers the area without black bars usually found in 16:9 embeds */}
+                                    <iframe
+                                        src={HERO_SLIDES[currentSlide].src}
+                                        className="absolute top-1/2 left-1/2 w-[300%] h-[300%] -translate-x-1/2 -translate-y-1/2 pointer-events-none"
+                                        frameBorder="0"
+                                        allow="autoplay; encrypted-media"
+                                        title="Background Video"
+                                    />
+                                </div>
+                            )}
+                        </motion.div>
+                    </AnimatePresence>
 
-          <motion.p 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.2, duration: 1 }}
-            className="max-w-xl font-serif text-xl md:text-2xl text-gray-200 mb-12 leading-relaxed italic"
-          >
-            "Here, ideas weren’t born, they were awakened."
-          </motion.p>
-          
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.5, duration: 1 }}
-            className="flex flex-col md:flex-row justify-start gap-6"
-          >
-            <Link to="/film-fest">
-                <Button variant="secondary" className="bg-white text-black hover:bg-gray-200 hover:text-black border-none">Film Festival</Button>
-            </Link>
-            <Link to="/theatre">
-                <Button variant="outline" className="text-white border-white hover:bg-white hover:!text-black">Theatre Season</Button>
-            </Link>
-          </motion.div>
-        </div>
-      </header>
+                    {/* Dark Overlay for Light Text */}
+                    <div className="absolute inset-0 bg-black/40 z-10" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-90 z-10" />
+                </div>
 
-      {/* Manifesto Section */}
-      {/* Requirement: Manifesto Video Cover Image 2664x984 */}
-      <section className="py-24 bg-white relative border-b border-gray-100">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto text-center mb-20">
-            <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
-            >
-                <SectionTitle subtitle="Our Philosophy" title="The Manifesto" />
-            </motion.div>
-            
-            <div className="font-serif text-xl md:text-2xl leading-loose text-roopantor-textDark space-y-6">
+                <div className="container relative z-20 px-6 text-left pt-40 md:pt-0 pb-24 md:pb-0">
+                    {/* <motion.span 
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.5, duration: 1 }}
+                    className="inline-block text-white border border-white px-6 py-2 text-xs tracking-[0.4em] uppercase mb-16 font-bold"
+                >
+                    Onno Shor, Ononno Shilpo
+                </motion.span> */}
+
+                    <motion.h1
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.8, duration: 1 }}
+                        className="font-display text-6xl md:text-8xl lg:text-9xl text-white mb-6 leading-tight"
+                    >
+                        From Bengal <br />
+                        <span className="italic font-serif text-white">To Bharat</span>
+                    </motion.h1>
+
+                    <motion.p
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 1.2, duration: 1 }}
+                        className="max-w-xl font-serif text-xl md:text-2xl text-gray-200 mb-12 leading-relaxed italic"
+                    >
+                        "Here, ideas weren’t born, they were awakened."
+                    </motion.p>
+
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 1.5, duration: 1 }}
+                        className="flex flex-col md:flex-row justify-start gap-6"
+                    >
+                        <Link to="/film-fest">
+                            <Button variant="secondary" className="bg-white text-black hover:bg-gray-200 hover:text-black border-none">Film Festival</Button>
+                        </Link>
+                        <Link to="/theatre">
+                            <Button variant="outline" className="text-white border-white hover:bg-white hover:!text-black">Theatre Season</Button>
+                        </Link>
+                    </motion.div>
+                </div>
+            </header>
+
+            {/* Manifesto Section */}
+            {/* Requirement: Manifesto Video Cover Image 2664x984 */}
+            <section className="py-24 bg-white relative border-b border-gray-100">
+                <div className="container mx-auto px-6">
+                    <div className="max-w-4xl mx-auto text-center mb-20">
+                        <motion.div
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8 }}
+                        >
+                            <SectionTitle subtitle="Our Philosophy" title="The Manifesto" />
+                        </motion.div>
+
+                        {/* <div className="font-serif text-xl md:text-2xl leading-loose text-roopantor-textDark space-y-6">
               {MANIFESTO_TEXT.split('\n').map((line, i) => (
                 <motion.p 
                     key={i} 
@@ -153,140 +153,143 @@ export const Home: React.FC = () => {
                     {line}
                 </motion.p>
               ))}
-            </div>
-          </div>
-          
-          {/* Manifesto Cover Image (2664x984) */}
-          {/* <motion.div
-            initial={{ opacity: 0, scale: 0.98 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1 }}
-            className="w-full relative aspect-[2664/984] overflow-hidden shadow-2xl border-4 border-white"
-          >
-              <img src="https://picsum.photos/2664/984?grayscale" alt="Manifesto Montage" className="w-full h-full object-cover" />
-              <div className="absolute inset-0 bg-roopantor-black/10" />
-              <div className="absolute inset-0 flex items-center justify-center group cursor-pointer">
-                  <div className="w-24 h-24 bg-white/90 backdrop-blur-md rounded-full flex items-center justify-center shadow-lg transition-transform duration-500 group-hover:scale-110">
-                      <div className="w-0 h-0 border-t-[12px] border-t-transparent border-l-[24px] border-l-roopantor-black border-b-[12px] border-b-transparent ml-2" />
-                  </div>
-              </div>
-          </motion.div> */}
-        </div>
-      </section>
+            </div> */}
+                    </div>
 
-      {/* Featured Films (Content Section) */}
-      {/* Requirement: 820x510 images (3 images) */}
-      <section className="py-24 bg-roopantor-charcoal">
-        <div className="container mx-auto px-6">
-            <SectionTitle subtitle="In Theatres" title="Film Retrospective" />
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-                {FILMS.slice(0, 3).map((film, index) => (
-                    <motion.div 
-                        key={film.id} 
-                        initial={{ opacity: 0, y: 50 }}
-                        whileInView={{ opacity: 1, y: 0 }}
+                    {/* Manifesto Cover Image (2664x984) */}
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.98 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
-                        transition={{ delay: index * 0.2, duration: 0.8 }}
-                        className="group cursor-pointer flex flex-col h-full"
+                        transition={{ duration: 1 }}
+                        className="w-full relative aspect-video overflow-hidden shadow-2xl border-4 border-white"
                     >
-                        {/* 820x510 dimension enforced by aspect ratio */}
-                        <div className="aspect-[820/510] overflow-hidden mb-8 shadow-sm bg-white relative">
-                            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500 z-10"/>
-                            <img 
-                                src={`/images/f${index + 1}.jpg`}
-                                alt={film.title} 
-                                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 grayscale group-hover:grayscale-0"
-                            />
+                        <iframe
+                            width="100%"
+                            height="100%"
+                            src="https://www.youtube.com/embed/mo6qPIGtQ6I?autoplay=1&mute=1&controls=0&loop=1&playsinline=1&showinfo=0&rel=0&iv_load_policy=3"
+                            title="Manifesto Video"
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowFullScreen
+                            className="absolute inset-0 w-full h-full"
+                        ></iframe>
+                    </motion.div>
+                </div>
+            </section>
+
+            {/* Featured Films (Content Section) */}
+            {/* Requirement: 820x510 images (3 images) */}
+            <section className="py-24 bg-roopantor-charcoal">
+                <div className="container mx-auto px-6">
+                    <SectionTitle subtitle="In Theatres" title="Theatre Schedule" />
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+                        {FILMS.slice(0, 3).map((film, index) => (
+                            <motion.div
+                                key={film.id}
+                                initial={{ opacity: 0, y: 50 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: index * 0.2, duration: 0.8 }}
+                                className="group cursor-pointer flex flex-col h-full"
+                            >
+                                {/* 820x510 dimension enforced by aspect ratio */}
+                                <div className="aspect-[820/510] overflow-hidden mb-8 shadow-sm bg-white relative">
+                                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500 z-10" />
+                                    <img
+                                        src={`/images/f${index + 1}.jpg`}
+                                        alt={film.title}
+                                        className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 grayscale group-hover:grayscale-0"
+                                    />
+                                </div>
+                                <div className="flex-grow flex flex-col justify-between border-t border-black pt-6">
+                                    <div>
+                                        <h3 className="text-2xl font-display text-roopantor-black mb-2 group-hover:text-gray-600 transition-colors">{film.title}</h3>
+                                        <p className="text-xs uppercase tracking-widest text-roopantor-textLight font-bold mb-3">{film.category}</p>
+                                        <p className="text-sm text-roopantor-textLight font-serif italic">Dir. {film.director}</p>
+                                    </div>
+                                    <div className="mt-6 flex justify-end">
+                                        <ArrowRight className="text-roopantor-black transform -translate-x-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
+                                    </div>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
+
+                    <div className="text-center mt-20">
+                        <Link to="/theatre">
+                            <Button variant="outline">View Full Schedule</Button>
+                        </Link>
+                    </div>
+                </div>
+            </section>
+
+            {/* Callout Section (Theatre) */}
+            {/* Updated to be fully responsive with min-height instead of fixed aspect ratio. Dark Theme. */}
+            <section className="py-24 bg-white">
+                <div className="container mx-auto px-6 aspect-[2652/1092]">
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                        className="relative w-full min-h-[600px] h-auto overflow-hidden shadow-2xl group flex items-center bg-black"
+                    >
+                        {/* Background Image */}
+                        <div className="absolute inset-0">
+                            <img src="/images/art.jpg" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 opacity-60" alt="Theatre Banner" />
                         </div>
-                        <div className="flex-grow flex flex-col justify-between border-t border-black pt-6">
-                            <div>
-                                <h3 className="text-2xl font-display text-roopantor-black mb-2 group-hover:text-gray-600 transition-colors">{film.title}</h3>
-                                <p className="text-xs uppercase tracking-widest text-roopantor-textLight font-bold mb-3">{film.category}</p>
-                                <p className="text-sm text-roopantor-textLight font-serif italic">Dir. {film.director}</p>
-                            </div>
-                            <div className="mt-6 flex justify-end">
-                                <ArrowRight className="text-roopantor-black transform -translate-x-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
+
+                        {/* Gradient Overlay - Dark for contrast */}
+                        <div className="absolute inset-0 bg-black/40 z-10" />
+                        {/* <div className="absolute inset-0 bg-black/90 md:bg-gradient-to-r md:from-black md:via-black/90 md:to-transparent z-10" /> */}
+
+                        <div className="relative z-20 w-full p-8 md:p-16 py-16">
+                            <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                                <div className="text-left md:pl-16">
+                                    <motion.span
+                                        className="inline-block border-b border-white pb-1 text-white uppercase tracking-widest text-xs font-bold mb-6"
+                                    >
+                                        Film Contest
+                                    </motion.span>
+                                    <motion.h2
+                                        className="font-display text-4xl md:text-6xl text-white mb-6 leading-tight"
+                                    >
+                                        Rongheen Film Collective
+                                    </motion.h2>
+                                    <motion.p
+                                        className="font-serif text-base md:text-lg text-gray-300 mb-10 leading-relaxed max-w-md"
+                                    >
+                                        Roopantor Art Festival celebrates unheard voices and fresh artistic visions. Send in your entries and let your creative voice be heard.
+                                    </motion.p>
+                                    <Link to="/contest">
+                                        <Button variant="secondary" className="bg-white text-black hover:bg-gray-200 border-none">Know More</Button>
+                                    </Link>
+                                </div>
+
+                                <div className="flex flex-row justify-center md:justify-end gap-6 md:gap-8 pr-0 md:pr-16">
+                                    {/* Inverted Colors: Plays box is now Black bg, White text */}
+                                    <div className="bg-roopantor-black p-6 md:p-8 shadow-xl border border-gray-800 text-center w-32 md:w-40 aspect-square flex flex-col justify-center items-center hover:-translate-y-2 transition-transform duration-300">
+                                        <Mic2 size={24} className="mb-2 md:mb-4 text-white" />
+                                        <span className="block text-2xl md:text-4xl font-display text-white font-bold">12</span>
+                                        <span className="text-[10px] uppercase tracking-widest text-gray-400 mt-1 md:mt-2">Plays</span>
+                                    </div>
+                                    {/* Shows box is now White bg, Black text for contrast */}
+                                    <div className="bg-white p-6 md:p-8 shadow-xl border border-gray-100 text-center w-32 md:w-40 aspect-square flex flex-col justify-center items-center text-roopantor-black hover:-translate-y-2 transition-transform duration-300 md:mt-12">
+                                        <Film size={24} className="mb-2 md:mb-4 text-roopantor-black" />
+                                        <span className="block text-2xl md:text-4xl font-display text-roopantor-black font-bold">25</span>
+                                        <span className="text-[10px] uppercase tracking-widest text-roopantor-textLight mt-1 md:mt-2">Shows</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </motion.div>
-                ))}
-            </div>
-            
-            <div className="text-center mt-20">
-                <Link to="/film-fest">
-                    <Button variant="outline">View Full Schedule</Button>
-                </Link>
-            </div>
-        </div>
-      </section>
-
-      {/* Callout Section (Theatre) */}
-      {/* Updated to be fully responsive with min-height instead of fixed aspect ratio. Dark Theme. */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-6 aspect-[2652/1092]">
-            <motion.div 
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                className="relative w-full min-h-[600px] h-auto overflow-hidden shadow-2xl group flex items-center bg-black"
-            >
-                {/* Background Image */}
-                <div className="absolute inset-0">
-                    <img src="/images/art.jpg" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 opacity-60" alt="Theatre Banner" />
                 </div>
-                
-                {/* Gradient Overlay - Dark for contrast */}
-                <div className="absolute inset-0 bg-black/40 z-10" />
-                {/* <div className="absolute inset-0 bg-black/90 md:bg-gradient-to-r md:from-black md:via-black/90 md:to-transparent z-10" /> */}
-                
-                <div className="relative z-20 w-full p-8 md:p-16 py-16">
-                     <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                        <div className="text-left md:pl-16">
-                            <motion.span 
-                                className="inline-block border-b border-white pb-1 text-white uppercase tracking-widest text-xs font-bold mb-6"
-                            >
-                                Live On Stage
-                            </motion.span>
-                            <motion.h2 
-                                className="font-display text-4xl md:text-6xl text-white mb-6 leading-tight"
-                            >
-                                When A Curtain Rises In Kolkata
-                            </motion.h2>
-                            <motion.p 
-                                className="font-serif text-base md:text-lg text-gray-300 mb-10 leading-relaxed max-w-md"
-                            >
-                                A thousand hearts rise with it. Discover the magic of live theatre with our curated selection of plays that challenge, comfort, and revolutionize.
-                            </motion.p>
-                             <Link to="/theatre">
-                                <Button variant="secondary" className="bg-white text-black hover:bg-gray-200 border-none">Book Tickets</Button>
-                            </Link>
-                        </div>
-                        
-                        <div className="flex flex-row justify-center md:justify-end gap-6 md:gap-8 pr-0 md:pr-16">
-                            {/* Inverted Colors: Plays box is now Black bg, White text */}
-                            <div className="bg-roopantor-black p-6 md:p-8 shadow-xl border border-gray-800 text-center w-32 md:w-40 aspect-square flex flex-col justify-center items-center hover:-translate-y-2 transition-transform duration-300">
-                                <Mic2 size={24} className="mb-2 md:mb-4 text-white" />
-                                <span className="block text-2xl md:text-4xl font-display text-white font-bold">12</span>
-                                <span className="text-[10px] uppercase tracking-widest text-gray-400 mt-1 md:mt-2">Plays</span>
-                            </div>
-                            {/* Shows box is now White bg, Black text for contrast */}
-                            <div className="bg-white p-6 md:p-8 shadow-xl border border-gray-100 text-center w-32 md:w-40 aspect-square flex flex-col justify-center items-center text-roopantor-black hover:-translate-y-2 transition-transform duration-300 md:mt-12">
-                                <Film size={24} className="mb-2 md:mb-4 text-roopantor-black" />
-                                <span className="block text-2xl md:text-4xl font-display text-roopantor-black font-bold">25</span>
-                                <span className="text-[10px] uppercase tracking-widest text-roopantor-textLight mt-1 md:mt-2">Shows</span>
-                            </div>
-                        </div>
-                     </div>
-                </div>
-            </motion.div>
-        </div>
-      </section>
+            </section>
 
-      {/* Call for Entries Banner */}
-      {/* Updated to be responsive with min-height and flexible padding. Now with dark image background */}
-      <section className="py-24 bg-roopantor-charcoal">
+            {/* Call for Entries Banner */}
+            {/* Updated to be responsive with min-height and flexible padding. Now with dark image background */}
+            {/* <section className="py-24 bg-roopantor-charcoal">
         <div className="container mx-auto px-6 aspect-[2652/1184]">
             <motion.div 
                 initial={{ opacity: 0, y: 20 }}
@@ -294,14 +297,14 @@ export const Home: React.FC = () => {
                 viewport={{ once: true }}
                 className="relative w-full min-h-[500px] h-auto py-24 md:py-12 overflow-hidden flex items-center justify-center text-center px-6 md:px-12 shadow-2xl"
             >
-                {/* Background Image & Overlay */}
+                
                 <div className="absolute inset-0 z-0">
                     <img 
                         src="/images/entries.jpg" 
                         alt="Call for Entries Background" 
                         className="w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-black/60" /> {/* Dark overlay for readability */}
+                    <div className="absolute inset-0 bg-black/60" /> 
                     <div className="absolute inset-0 bg-noise opacity-20 mix-blend-overlay"></div>
                     <div className="absolute inset-4 border border-white/20"></div>
                 </div>
@@ -321,7 +324,7 @@ export const Home: React.FC = () => {
                 </div>
             </motion.div>
         </div>
-      </section>
-    </PageTransition>
-  );
+      </section> */}
+        </PageTransition>
+    );
 };

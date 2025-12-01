@@ -1,5 +1,5 @@
 import React from 'react';
-import { Instagram, Facebook, Twitter, Youtube } from 'lucide-react';
+import { Instagram, Youtube } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
 
 export const Footer: React.FC = () => {
@@ -13,11 +13,12 @@ export const Footer: React.FC = () => {
               "It is where Bengal meets Bharat again, not as state and nation, but as a story and soul."
             </p>
             <div className="flex space-x-6">
-              {[Instagram, Facebook, Twitter, Youtube].map((Icon, i) => (
-                <a key={i} href="#" className="text-roopantor-black hover:text-gray-500 transition-colors">
-                  <Icon size={20} />
-                </a>
-              ))}
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-roopantor-black hover:text-gray-500 transition-colors">
+                <Instagram size={20} />
+              </a>
+              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="text-roopantor-black hover:text-gray-500 transition-colors">
+                <Youtube size={20} />
+              </a>
             </div>
           </div>
 
@@ -26,24 +27,24 @@ export const Footer: React.FC = () => {
             <ul className="space-y-4">
               {['Theatre', 'Film Festival', 'Contest', 'About Us'].map((item) => (
                 <li key={item}>
-                    <NavLink to={`/${item.toLowerCase().replace(' ', '-')}`} className="text-sm text-roopantor-textLight hover:text-roopantor-black transition-colors">
-                        {item}
-                    </NavLink>
+                  <NavLink to={`/${item.toLowerCase().replace(' ', '-')}`} className="text-sm text-roopantor-textLight hover:text-roopantor-black transition-colors">
+                    {item}
+                  </NavLink>
                 </li>
               ))}
             </ul>
           </div>
 
           <div>
-             <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-roopantor-black mb-6">Contact</h4>
-             <ul className="space-y-4 text-sm text-roopantor-textLight">
-               <li>hello@roopantor.art</li>
-               <li>+91 98765 43210</li>
-               <li>Asutosh Centenary Hall<br/>Indian Museum<br/>Kolkata, West Bengal</li>
-             </ul>
+            <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-roopantor-black mb-6">Contact</h4>
+            <ul className="space-y-4 text-sm text-roopantor-textLight">
+              <li>hello@roopantor.art</li>
+              <li>+91 98765 43210</li>
+              <li>Asutosh Centenary Hall<br />Indian Museum<br />Kolkata, West Bengal</li>
+            </ul>
           </div>
         </div>
-        
+
         <div className="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400">
           <p>© 2024 Roopantor Art Festival. All Rights Reserved.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
