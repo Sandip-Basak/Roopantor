@@ -10,15 +10,60 @@ import { PageTransition } from '../components/PageTransition';
 const HERO_SLIDES = [
     {
         type: 'image',
-        src: '/images/cr1.jpg'
+        src: '/images/cr1.jpg',
+        title: {
+            main: 'Roopantor Art',
+            highlight: 'Festival'
+        },
+        quote: 'Here, ideas awaken, returning us to the art that unites',
+        buttons: [
+            {
+                label: 'Film Festival',
+                link: '/film-fest',
+                variant: 'secondary',
+                className: 'bg-white text-black hover:bg-gray-200 hover:text-black border-none'
+            },
+            {
+                label: 'Theatre Season',
+                link: '/theatre',
+                variant: 'outline',
+                className: 'text-white border-white hover:bg-white hover:!text-black'
+            }
+        ]
     },
     {
         type: 'image',
-        src: '/images/cr2.jpg'
+        src: '/images/cr2.jpg',
+        title: {
+            main: 'Rongheen Film',
+            highlight: 'Collective'
+        },
+        quote: 'Send in your film entries and make your creative voice heard.',
+        buttons: [
+            {
+                label: 'Submit Entry',
+                link: '/contest',
+                variant: 'secondary',
+                className: 'bg-white text-black hover:bg-gray-200 hover:text-black border-none'
+            }
+        ]
     },
     {
         type: 'image',
-        src: '/images/cr3.jpg'
+        src: '/images/cr3.jpg',
+        title: {
+            main: 'From Bengal ',
+            highlight: 'To Bharat'
+        },
+        quote: '"Where the east becomes light again. Where art remembers its origin. Where India rediscovers her creative soul."',
+        buttons: [
+            {
+                label: 'Watch Film',
+                link: '/contest',
+                variant: 'secondary',
+                className: 'bg-white text-black hover:bg-gray-200 hover:text-black border-none'
+            }
+        ]
     },
     // {
     //     type: 'video',
@@ -27,7 +72,20 @@ const HERO_SLIDES = [
     // },
     {
         type: 'image',
-        src: '/images/cr4.jpg'
+        src: '/images/cr4.jpg',
+        title: {
+            main: 'Roopantor',
+            highlight: 'Theatre Festival'
+        },
+        quote: 'Roopantar is thrilled to partner with the esteemed Indian Museum for the upcoming Bongiyo Natyo Utsav.',
+        buttons: [
+            {
+                label: 'Book Your Seats Now',
+                link: '/theatre',
+                variant: 'secondary',
+                className: 'bg-white text-black hover:bg-gray-200 hover:text-black border-none'
+            }
+        ]
     }
 ];
 
@@ -41,23 +99,25 @@ export const Home: React.FC = () => {
         return () => clearInterval(timer);
     }, []);
 
+    const currentHero = HERO_SLIDES[currentSlide];
+
     return (
         <PageTransition className="w-full">
             {/* Hero Section */}
             <header className="relative min-h-screen md:h-[85vh] md:min-h-[600px] flex items-start md:items-center justify-center overflow-hidden bg-roopantor-black">
                 <div className="absolute inset-0 z-0 bg-black aspect-[2664/984]">
-                    <AnimatePresence>
+                    <AnimatePresence mode="wait">
                         <motion.div
                             key={currentSlide}
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
-                            transition={{ duration: 5 }}
+                            transition={{ duration: 1.5 }}
                             className="absolute inset-0 w-full h-full"
                         >
-                            {HERO_SLIDES[currentSlide].type === 'image' ? (
+                            {currentHero.type === 'image' ? (
                                 <img
-                                    src={HERO_SLIDES[currentSlide].src}
+                                    src={currentHero.src}
                                     className="w-full h-full object-cover"
                                     alt="Hero Slide"
                                 />
@@ -65,7 +125,7 @@ export const Home: React.FC = () => {
                                 <div className="w-full h-full relative overflow-hidden">
                                     {/* Scale up iframe to ensure it covers the area without black bars usually found in 16:9 embeds */}
                                     <iframe
-                                        src={HERO_SLIDES[currentSlide].src}
+                                        src={currentHero.src}
                                         className="absolute top-1/2 left-1/2 w-[300%] h-[300%] -translate-x-1/2 -translate-y-1/2 pointer-events-none"
                                         frameBorder="0"
                                         allow="autoplay; encrypted-media"
@@ -82,47 +142,46 @@ export const Home: React.FC = () => {
                 </div>
 
                 <div className="container relative z-20 px-6 text-left pt-40 md:pt-0 pb-24 md:pb-0">
-                    {/* <motion.span 
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.5, duration: 1 }}
-                    className="inline-block text-white border border-white px-6 py-2 text-xs tracking-[0.4em] uppercase mb-16 font-bold"
-                >
-                    Onno Shor, Ononno Shilpo
-                </motion.span> */}
+                    <AnimatePresence mode="wait">
+                        <div key={currentSlide}>
+                            <motion.h1
+                                initial={{ opacity: 0, y: 30 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -20 }}
+                                transition={{ delay: 0.2, duration: 0.8 }}
+                                className="font-display text-6xl md:text-8xl lg:text-9xl text-white mb-6 leading-tight"
+                            >
+                                {currentHero.title?.main} <br />
+                                <span className="italic font-serif text-white">{currentHero.title?.highlight}</span>
+                            </motion.h1>
 
-                    <motion.h1
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.8, duration: 1 }}
-                        className="font-display text-6xl md:text-8xl lg:text-9xl text-white mb-6 leading-tight"
-                    >
-                        From Bengal <br />
-                        <span className="italic font-serif text-white">To Bharat</span>
-                    </motion.h1>
+                            <motion.p
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                exit={{ opacity: 0 }}
+                                transition={{ delay: 0.4, duration: 0.8 }}
+                                className="max-w-xl font-serif text-xl md:text-2xl text-gray-200 mb-12 leading-relaxed italic"
+                            >
+                                {currentHero.quote}
+                            </motion.p>
 
-                    <motion.p
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 1.2, duration: 1 }}
-                        className="max-w-xl font-serif text-xl md:text-2xl text-gray-200 mb-12 leading-relaxed italic"
-                    >
-                        "Here, ideas weren’t born, they were awakened."
-                    </motion.p>
-
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 1.5, duration: 1 }}
-                        className="flex flex-col md:flex-row justify-start gap-6"
-                    >
-                        <Link to="/film-fest">
-                            <Button variant="secondary" className="bg-white text-black hover:bg-gray-200 hover:text-black border-none">Film Festival</Button>
-                        </Link>
-                        <Link to="/theatre">
-                            <Button variant="outline" className="text-white border-white hover:bg-white hover:!text-black">Theatre Season</Button>
-                        </Link>
-                    </motion.div>
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: 10 }}
+                                transition={{ delay: 0.6, duration: 0.8 }}
+                                className="flex flex-col md:flex-row justify-start gap-6"
+                            >
+                                {currentHero.buttons?.map((btn, idx) => (
+                                    <Link key={idx} to={btn.link}>
+                                        <Button variant={btn.variant as any} className={btn.className}>
+                                            {btn.label}
+                                        </Button>
+                                    </Link>
+                                ))}
+                            </motion.div>
+                        </div>
+                    </AnimatePresence>
                 </div>
             </header>
 
