@@ -19,7 +19,8 @@ const HERO_SLIDES = [
         buttons: [
             {
                 label: 'Film Festival',
-                link: '/film-fest',
+                link: '/coming-soon',
+                // link: '/film-fest',
                 variant: 'secondary',
                 className: 'bg-white text-black hover:bg-gray-200 hover:text-black border-none'
             },
@@ -42,7 +43,8 @@ const HERO_SLIDES = [
         buttons: [
             {
                 label: 'Submit Entry',
-                link: '/contest',
+                link: '/coming-soon',
+                // link: '/contest',
                 variant: 'secondary',
                 className: 'bg-white text-black hover:bg-gray-200 hover:text-black border-none'
             }
@@ -59,7 +61,8 @@ const HERO_SLIDES = [
         buttons: [
             {
                 label: 'Watch Film',
-                link: '/contest',
+                link: '/coming-soon',
+                // link: '/contest',
                 variant: 'secondary',
                 className: 'bg-white text-black hover:bg-gray-200 hover:text-black border-none'
             }
@@ -321,7 +324,7 @@ export const Home: React.FC = () => {
                                     >
                                         Roopantor Art Festival celebrates unheard voices and fresh artistic visions. Send in your entries and let your creative voice be heard.
                                     </motion.p>
-                                    <Link to="/contest">
+                                    <Link to="/coming-soon">
                                         <Button variant="secondary" className="bg-white text-black hover:bg-gray-200 border-none">Know More</Button>
                                     </Link>
                                 </div>

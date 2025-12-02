@@ -3,8 +3,10 @@ import { NavItem, Play, Film, TeamMember } from './types';
 export const NAV_ITEMS: NavItem[] = [
   { label: 'Home', path: '/' },
   { label: 'Theatre', path: '/theatre' },
-  { label: 'Film', path: '/film-fest' },
-  { label: 'Contest', path: '/contest' },
+  { label: 'Film', path: '/coming-soon' },
+  { label: 'Contest', path: '/coming-soon' },
+  // { label: 'Film', path: '/film-fest' },
+  // { label: 'Contest', path: '/contest' },
   { label: 'About', path: '/about' },
 ];
 

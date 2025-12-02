@@ -9,15 +9,16 @@ import { Theatre } from './pages/Theatre';
 import { FilmFest } from './pages/FilmFest';
 import { Contest } from './pages/Contest';
 import { About } from './pages/About';
+import { ComingSoon } from './pages/ComingSoon';
 
 function ScrollToTop() {
-  const { pathname } = useLocation();
+    const { pathname } = useLocation();
 
-  React.useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+    React.useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
 
-  return null;
+    return null;
 }
 
 // Wrapper for routing logic to allow AnimatePresence to work with useLocation
@@ -32,6 +33,7 @@ const AnimatedRoutes: React.FC = () => {
                 <Route path="/film-fest" element={<FilmFest />} />
                 <Route path="/contest" element={<Contest />} />
                 <Route path="/about" element={<About />} />
+                <Route path="/coming-soon" element={<ComingSoon />} />
             </Routes>
         </AnimatePresence>
     );
@@ -68,11 +70,11 @@ const AppContent: React.FC = () => {
 }
 
 function App() {
-  return (
-    <Router>
-        <AppContent />
-    </Router>
-  );
+    return (
+        <Router>
+            <AppContent />
+        </Router>
+    );
 }
 
 export default App;
