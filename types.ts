@@ -5,6 +5,8 @@ export interface Play {
   image: string;
   date: string;
   location: string;
+  group?: string;
+  director?: string;
 }
 
 export interface Film {

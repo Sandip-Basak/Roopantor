@@ -20,27 +20,103 @@ Bengal didn’t just make art, it made the artist.`;
 export const THEATRE_PRODUCTIONS: Play[] = [
   {
     id: '1',
-    title: 'The Unfinished Song',
-    description: 'A deep dive into the revolutionary spirit of the 70s, where silence spoke louder than words.',
-    image: 'https://picsum.photos/800/1200?random=1',
-    date: 'Oct 15 - Oct 20, 2024',
-    location: 'Star Theatre, Kolkata'
+    title: 'DAKKHINESWAR',
+    description: 'This play portrays a sacred journey of transcendence, tracing the evolution of an Indian Mystic who began as a seeker and evolved into a universal spiritual icon through the synthesis of diverse paths within the holy temple of Dakshineshwar.',
+    image: '/images/t7.jpg',
+    date: '03 Dec I 5:15 PM',
+    location: 'Roopantor Art Festival',
+    group: '',
+    director: 'Srijon Chatterjee'
   },
   {
     id: '2',
-    title: 'Shadows of the Ghat',
-    description: 'An ethereal journey through the mists of the Ganges, exploring life, death, and what lies between.',
-    image: 'https://picsum.photos/800/1200?random=2',
-    date: 'Nov 05 - Nov 12, 2024',
-    location: 'Academy of Fine Arts'
+    title: 'Pritilata',
+    description: 'The play chronicles the extraordinary evolution of an ordinary spirit, revealing the untold chapters of a young woman\'s ultimate sacrifice to shatter the chains of subjugation.',
+    image: '/images/t4.jpg',
+    date: '04 Dec I 4:30 PM',
+    location: 'Roopantor Art Festival',
+    group: 'Kolkata Natya Sena',
+    director: 'Sri. Ayan Sengupta'
   },
   {
     id: '3',
-    title: 'Echoes of 1905',
-    description: 'Reinterpreting the swadeshi movement through a modern, abstract lens.',
-    image: 'https://picsum.photos/800/1200?random=3',
-    date: 'Dec 01 - Dec 03, 2024',
-    location: 'Rabindra Sadan'
+    title: 'Bharatgatha',
+    description: 'The play illustrates the transformative power of patriotism, tracing the journey of students and teachers into national icons whose forgotten sacrifices now serve as a blueprint for the youth to build the future.',
+    image: '/images/t9.jpg',
+    date: '04 Dec I 5:45 PM',
+    location: 'Roopantor Art Festival',
+    group: 'Kolkata Shilpobhumi',
+    director: 'Dr Sukamal Mitra'
+  },
+  {
+    id: '4',
+    title: 'Dhoper Chop',
+    description: 'The play is a vibrant musical satire on cultural awakening, where a farmer\'s daughter challenges societal hypocrisy to reclaim the dignity of her language and the binding power of a true, unified heritage.',
+    image: '/images/t6.jpg',
+    date: '04 Dec I 7:00 PM',
+    location: 'Roopantor Art Festival',
+    group: 'Abhinetri Sangha',
+    director: 'Smt. Papia Adhikary'
+  },
+  {
+    id: '5',
+    title: 'Andhakarer Dhew',
+    description: 'The play captures the turbulence of a generation in crisis, portraying the courageous stand of youth against systemic corruption and the rising tides of oppression to reclaim their future.',
+    image: '/images/t3.jpg',
+    date: '05 Dec I 4:30 PM',
+    location: 'Roopantor Art Festival',
+    group: 'Dey Ganga Mahonbanshi Welfare Society',
+    director: 'Dr Mahon Ghosh'
+  },
+  {
+    id: '6',
+    title: 'Aaguner Chithi',
+    description: 'The play acts as an emotional chronicle of immortal sacrifice, bringing to life the final, fiery written words of martyrs who faced death with a smile to pave the path for freedom',
+    image: '/images/t5.jpg',
+    date: '05 Dec I 5:45 PM',
+    location: 'Roopantor Art Festival',
+    group: 'Mrichhakotik',
+    director: 'Sri Subhasis Bannerjee'
+  },
+  {
+    id: '7',
+    title: 'Keno cheye achho go Maa',
+    description: 'The play is a stirring tribute to unbroken courage and sacrifice, chronicling the defiance of a pioneer who endured immense physical suffering to prove that the human spirit cannot be caged by tyranny.',
+    image: '/images/t2.jpg',
+    date: '05 Dec I 7:00 PM',
+    location: 'Roopantor Art Festival',
+    group: 'Sanskar Bharati',
+    director: 'Sri Amiit Dey'
+  },
+  {
+    id: '8',
+    title: 'Beej',
+    description: 'The play is a gripping investigation into the roots of manipulation and manufactured faith, as the courage to question blind acceptance uncovers a deep-seated conspiracy planted within the community.',
+    image: '/images/t8.jpg',
+    date: '06 Dec I 3:15 PM',
+    location: 'Roopantor Art Festival',
+    group: 'Taki Saraswati Natyo Kala Kendra',
+    director: 'Prabir Mandal'
+  },
+  {
+    id: '9',
+    title: 'YOJONGANDHA',
+    description: 'The play celebrates the transformative power of wisdom and resilience, portraying a woman\'s ascent from obscurity to eminence as a timeless testament to female empowerment and the strength found in unity amidst diversity.',
+    image: '/images/t10.jpg',
+    date: '06 Dec I 4:30 PM',
+    location: 'Roopantor Art Festival',
+    group: 'Ubaach / UBAACHO',
+    director: 'Sanjoy Ghosh Dastidar'
+  },
+  {
+    id: '10',
+    title: 'APANKTEO',
+    description: 'This play explores the universal quest for dignity and moral balance, illustrating how the overlooked \'shadows\' of civilization unite to reclaim justice for the innocent and prove that no human life is truly insignificant.',
+    image: '/images/t1.jpg',
+    date: '06 Dec I 6:00 PM',
+    location: 'Roopantor Art Festival',
+    group: 'Nayabad Titas',
+    director: 'Manoj Kr. Saha (Abir)'
   }
 ];
 
