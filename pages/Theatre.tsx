@@ -11,7 +11,7 @@ export const Theatre: React.FC = () => {
     <PageTransition className="w-full pt-32 pb-20 bg-white">
       <div className="container mx-auto px-6">
         <SectionTitle 
-            subtitle="Season 2024" 
+            subtitle="Season 2025" 
             title="Theatre Schedule" 
             className="mb-24"
         />
@@ -54,11 +54,11 @@ export const Theatre: React.FC = () => {
                             {play.description}
                         </p>
                         
-                        <motion.div className="pt-8" whileHover={{ x: 10 }}>
+                        {/* <motion.div className="pt-8" whileHover={{ x: 10 }}>
                             <Button variant="primary" className="flex items-center gap-2">
                                 <Ticket size={16} /> Book Your Seat
                             </Button>
-                        </motion.div>
+                        </motion.div> */}
                     </div>
                 </motion.div>
             ))}
