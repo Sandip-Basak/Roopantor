@@ -229,7 +229,7 @@ export const Home: React.FC = () => {
                         <iframe
                             width="100%"
                             height="100%"
-                            src="https://www.youtube.com/embed/mo6qPIGtQ6I?autoplay=1&mute=1&controls=0&loop=1&playsinline=1&showinfo=0&rel=0&iv_load_policy=3"
+                            src="https://www.youtube.com/embed/Zll1o3C9lCw?si=FKcPfI52-gsTixDZ&autoplay=1&mute=1&controls=0&loop=1&playlist=Zll1o3C9lCw&playsinline=1&showinfo=0&rel=0&iv_load_policy=3"
                             title="Manifesto Video"
                             frameBorder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
