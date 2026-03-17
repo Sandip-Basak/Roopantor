@@ -18,7 +18,7 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
           script: |
-            cd /home/qubitone_001/Roopantor
+            cd /home/${{ secrets.SSH_USER }}/Roopantor
             git pull
             docker compose up -d --build
             
