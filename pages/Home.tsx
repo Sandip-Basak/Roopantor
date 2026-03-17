@@ -281,7 +281,7 @@ export const Home: React.FC = () => {
 
                     <div className="text-center mt-20">
                         <Link to="/theatre">
-                            <Button variant="outline">View Full Schedule</Button>
+                            <Button variant="outline">Full Schedule</Button>
                         </Link>
                     </div>
                 </div>
