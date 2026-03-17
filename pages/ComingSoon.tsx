@@ -16,7 +16,7 @@ export const ComingSoon: React.FC = () => {
                 >
                     <SectionTitle subtitle="Stay Tuned" title="Coming Soon" />
                     <p className="max-w-2xl mx-auto text-roopantor-textDark font-serif text-xl font-medium italic mb-12">
-                        We are working on something extraordinary. Check back soon for more updates.
+                        We are working on something extraordinary. Check back soon.
                     </p>
                     <Link to="/">
                         <Button variant="primary">Return Home</Button>
